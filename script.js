@@ -19,20 +19,20 @@ const allCakes = [
 // Players with their donated cakes (replace with real data)
 const players = [
   { 
-    name: "Player1", 
+    name: "AverageNine5410", 
     cake: "Century Cake of Hype", 
     status: "Donated", 
     tooltip: "Mining Fortune" 
   },
   { 
-    name: "Player2", 
-    cake: "Cloudy Century Cake", 
+    name: "idk who sold this", 
+    cake: "Chocolate Century Cake", 
     status: "Sold", 
     tooltip: "Foraging Fortune" 
   },
   { 
-    name: "Player3", 
-    cake: "Chocolate Century Cake", 
+    name: "IamDevilMC", 
+    cake: "Cloudy Century Cake", 
     status: "Donated", 
     tooltip: "Farming Fortune" 
   }
