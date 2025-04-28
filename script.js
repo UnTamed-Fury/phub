@@ -22,20 +22,32 @@ const players = [
     name: "AverageNine5410", 
     cake: "Century Cake of Hype", 
     status: "Donated", 
-    tooltip: "Mining Fortune" 
+    tooltip: "+5 Mining Fortune" 
   },
   { 
     name: "idk who sold this", 
     cake: "Chocolate Century Cake", 
     status: "Sold", 
-    tooltip: "Foraging Fortune" 
+    tooltip: "+5 Foraging Fortune" 
   },
   { 
     name: "IamDevilMC", 
     cake: "Cloudy Century Cake", 
     status: "Donated", 
-    tooltip: "Farming Fortune" 
+    tooltip: " +5 Farming Fortune" 
   }
+  {
+    name: "_mel",
+    cake: "Undead Century Cake",
+    status: "Sold",
+    tooltip: " +1 Vitality"
+   }
+  {
+    name: "_mel",
+    cake: "Crab-Colored Century Cake",
+    status: "Sold",
+    tooltip: " +10 Health"
+   }
 ];
 
 const usedCakes = new Set();
