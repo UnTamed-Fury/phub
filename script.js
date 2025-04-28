@@ -34,32 +34,32 @@ const players = [
     name: "IamDevilMC", 
     cake: "Cloudy Century Cake", 
     status: "Donated", 
-    tooltip: " +5 Farming Fortune" 
-  }
+    tooltip: "+5 Farming Fortune" 
+  },
+  {
+    name: "_mel",
+    cake: "Crab-Colored Century Cake",
+    status: "Sold",
+    tooltip: "+10 Health"
+  },
   {
     name: "_mel",
     cake: "Undead Century Cake",
     status: "Sold",
-    tooltip: " +1 Vitality"
-   }
-   {
-    name: "_mel",
-    cake: "Crab-Colored Century Cake",
-    status: "Sold",
-    tooltip: " +10 Health"
-   }
-   {
+    tooltip: "+1 Vitality"
+  },
+  {
     name: "ReincarnatedFury",
     cake: "aPunch Century Cake",
     status: "Owned",
     tooltip: "+2 Strength"
-   }
-   {
+  },
+  {
     name: "7arnavkabra",
     cake: "Sea Emperor Century Cake",
     status: "Sold",
-    tooltip: "+1 Sea creatur chance"
-   }
+    tooltip: "+1 Sea Creature Chance"
+  }
 ];
 
 const usedCakes = new Set();
@@ -69,6 +69,7 @@ const playerList = document.getElementById('playerList');
 const progressFill = document.getElementById('progressFill');
 const progressText = document.getElementById('progressText');
 const remainingCakes = document.getElementById('remainingCakes');
+const collectedText = document.querySelector('.collected-text');
 
 // Render Player List
 function renderPlayers() {
@@ -85,13 +86,14 @@ function renderPlayers() {
     // Cake Image
     const cakeImage = document.createElement('img');
     cakeImage.className = 'cake-image';
+    // Preserve "aPunch" and replace spaces/apostrophes with hyphens
     cakeImage.src = `/cakes/${player.cake.replace(/['\s]/g, '-').toLowerCase()}.png`;
     cakeImage.alt = player.cake;
 
     // Tooltip for Cake Effect
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip';
-    tooltip.textContent = player.tooltip;
+    tooltip.textContent = player.tooltip.trim();
     cakeImage.appendChild(tooltip);
 
     // Cake Name
@@ -116,12 +118,15 @@ function renderPlayers() {
   });
 }
 
-// Update Progress Bar
+// Update Progress Bar & Counters
 function updateProgress() {
   const collected = usedCakes.size;
-  const percentage = (collected / allCakes.length) * 100;
+  const total = allCakes.length;
+  const percentage = (collected / total) * 100;
+
   progressFill.style.width = `${percentage}%`;
-  progressText.textContent = `${collected}/${allCakes.length}`;
+  progressText.textContent = `${collected}/${total}`;
+  collectedText.textContent = `Collected Cakes (${collected}/${total}):`;
 }
 
 // Render Remaining Cakes
@@ -140,3 +145,11 @@ function renderRemainingCakes() {
 renderPlayers();
 updateProgress();
 renderRemainingCakes();
+
+// Optional: Add dynamic updates later (e.g., form submission)
+document.getElementById('addPlayerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+   // Add new player logic here
+   updateProgress();
+   renderRemainingCakes();
+ });
