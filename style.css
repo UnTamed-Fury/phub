@@ -189,6 +189,11 @@ body {
   color: white;
 }
 
+.status.owned {
+  background: #ffd700;
+  color: white;
+}
+
 /* Tooltip for Cake Effects */
 .tooltip {
   display: none;
