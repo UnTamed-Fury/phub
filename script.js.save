@@ -2,7 +2,7 @@
 const allCakes = [
   "Streamer's Century Cake",
   "Crab-Colored Century Cake",
-  "aPunch Century Cake",
+  "aPun Century Cake",
   "Latest Update Century Cake",
   "Potato-Style Century Cake",
   "Pet Rock Century Cake",
@@ -42,23 +42,11 @@ const players = [
     status: "Sold",
     tooltip: " +1 Vitality"
    }
-   {
+  {
     name: "_mel",
     cake: "Crab-Colored Century Cake",
     status: "Sold",
     tooltip: " +10 Health"
-   }
-   {
-    name: "ReincarnatedFury",
-    cake: "aPunch Century Cake",
-    status: "Owned",
-    tooltip: "+2 Strength"
-   }
-   {
-    name: "7arnavkabra",
-    cake: "Sea Emperor Century Cake",
-    status: "Sold",
-    tooltip: "+1 Sea creatur chance"
    }
 ];
 
