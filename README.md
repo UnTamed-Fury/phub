@@ -1,7 +1,21 @@
-# phub
+# phub – PortalHub Island Display
 
-phub website for nothing but buying cakes
+This is a simple website for my **FakePixel Skyblock** island: **PHub**(portalhub).
+IGN(if you want to visit it): **PHUB**.
+The purpose of the site is:
 
-Website is getting hosted at netlify
+- To **ask for Century Cake donations**
+- To **show who has donated or sold cakes**
 
-website - https://portalhub.netlify.app/
+**Note**: This is just a visual website. It doesn't connect to the game — it's just for fun and display.
+
+Live site: [https://portalhub.netlify.app](https://portalhub.netlify.app)
+
+---
+
+## Files
+
+- `index.html` – Main web page  
+- `style.css` – Styling  
+- `script.js` – Handles dynamic content  
+- `players.json` – Players Data
