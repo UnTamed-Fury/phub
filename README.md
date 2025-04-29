@@ -1,4 +1,4 @@
-# phub – PortalHub Island Display
+# phub – PortalHub Island
 
 This is a simple website for my **FakePixel Skyblock** island: **PHub**(portalhub).
 IGN(if you want to visit it): **PHUB**.
