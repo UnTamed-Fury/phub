@@ -1,172 +1,228 @@
-/* Global Styles */
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-size: 16px;
-  line-height: 1.6;
+/*=============================================
+=            Global Variables & Base          =
+=============================================*/
+:root {
+  --color-bg: #000;
+  --color-text: #E0E0E0;
+  --color-accent: #FFD700;
+  --color-accent-dark: #FFA500;
+  --color-muted: #8B8B8B;
+  --color-secondary: #00BFFF;
+  --color-teal: #3AABA6;
+  --color-burgundy: #8B2C2C;
+  --color-card: #222;
+
+  /* Status-specific colors */
+  --color-status-donated: #38c172; /* vibrant green */
+  --color-status-sold:    #e3342f; /* rich red      */
+  --color-status-owned:   #f6993f; /* warm orange   */
+
+  --radius-lg: 20px;
+  --radius-md: 15px;
+  --radius-sm: 10px;
+
+  --shadow-glow: 0 0 30px var(--color-accent);
+  --shadow-soft: 0 0 15px rgba(255, 204, 0, 0.5);
+
+  --font-base: 16px;
+  --font-sans: "Arial", system-ui, sans-serif;
+  --line-height: 1.6;
+
+  --transition-default: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/*=============================================
+=                 Reset & Base                =
+=============================================*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--font-base);
+  line-height: var(--line-height);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/*=============================================
+=              Container Layout               =
+=============================================*/
 .container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  padding: 40px;
   gap: 40px;
 }
 
-/* Hero Section */
+/*=============================================
+=               Hero Section                  =
+=============================================*/
 .hero {
+  width: 100%;
   text-align: center;
   padding: 40px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  max-width: 800px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glow);
 }
 
 .hero h1 {
-  color: #ffcc00;
-  font-size: 3em;
+  font-size: clamp(2.5rem, 5vw, 3em);
   margin-bottom: 20px;
+  color: var(--color-accent);
 }
 
 .hero p {
-  color: #aaaaaa;
   font-size: 1.1em;
+  color: var(--color-muted);
   line-height: 1.4;
 }
 
-/* Progress Bar */
+/*=============================================
+=               Progress Bar                  =
+=============================================*/
 .progress-section {
-  width: 80%;
+  width: 100%;
   max-width: 600px;
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .progress-bar {
+  position: relative;
   width: 100%;
   height: 30px;
-  background: #222;
-  border-radius: 15px;
-  position: relative;
-  margin: 20px 0;
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .progress-fill {
+  width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #ffcc00, #ff6600);
-  border-radius: 15px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-dark));
+  border-radius: var(--radius-md);
   transition: width 0.4s ease;
 }
 
 .progress-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text);
   font-weight: bold;
   font-size: 1.1em;
 }
 
-/* Missing Cakes */
+/*=============================================
+=           Missing Cakes Section             =
+=============================================*/
 .missing-section {
+  width: 100%;
   background: rgba(255, 255, 255, 0.05);
   padding: 20px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 800px;
+  border-radius: var(--radius-lg);
   text-align: center;
-  margin-bottom: 40px;
 }
 
 .cakes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   list-style: none;
   padding: 0;
   margin-top: 10px;
 }
 
 .cakes-list li {
-  display: inline-block;
-  margin: 5px;
+  background: var(--color-card);
+  color: var(--color-accent);
   padding: 8px 12px;
-  background: #222;
-  border-radius: 15px;
+  border-radius: var(--radius-md);
   font-size: 0.9em;
-  color: #ffcc00;
 }
 
-/* Completed Cakes & Player Data */
+/*=============================================
+=             Completed Cakes Grid            =
+=============================================*/
 .completed-section {
+  width: 100%;
   background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 40px;
+  padding: 40px 0;
+  border-radius: var(--radius-lg);
 }
 
-.completed-section h3 {
-  color: #00ffcc;
-  margin-bottom: 20px;
-}
-
-.player-container {
-  width: 100%;
+.collected-text {
+  font-size: 1.5em;
+  color: var(--color-secondary);
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .player-scroll {
-  max-height: 50vh;
+  max-height: 60vh;
   overflow-y: auto;
-  padding: 10px;
+  width: 100%;
 }
 
 .player-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
 }
 
 .player-box {
-  background: #222;
-  padding: 20px;
-  border-radius: 15px;
+  background: var(--color-card);
+  padding: 25px;
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+  will-change: transform;
 }
 
 .player-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(255, 204, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
 }
 
 .player-name {
-  color: #00ffcc;
   font-size: 1.3em;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: var(--color-text);
+  text-align: center;
 }
 
 .cake-image {
-  max-width: 80px;
-  max-height: 120px;
+  width: 80px;
+  height: 120px;
   object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
-  position: relative;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
   cursor: help;
 }
 
 .cake-name {
-  color: #ffcc00;
+  color: var(--color-accent);
   font-size: 0.9em;
   text-align: center;
   margin: 5px 0;
@@ -174,67 +230,44 @@ body {
 
 .status {
   padding: 6px 12px;
-  border-radius: 15px;
   font-size: 0.8em;
   text-transform: uppercase;
+  border-radius: var(--radius-md);
   margin-top: 5px;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.status.donated {
-  background: #4CAF50;
-  color: white;
-}
+.status.donated { background: var(--color-status-donated); }
+.status.sold    { background: var(--color-status-sold);    }
+.status.owned   { background: var(--color-status-owned);   }
 
-.status.sold {
-  background: #f44336;
-  color: white;
-}
-
-.status.owned {
-  background: #ffd700;
-  color: white;
-}
-
-/* Tooltip Fixes */
-.tooltip {
-  display: none;
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: #ffcc00;
-  padding: 5px 10px;
-  border-radius: 5px;
-  white-space: nowrap;
-  font-size: 0.8em;
-  z-index: 1000;
-}
-
-.cake-image:hover .tooltip {
-  display: block;
-}
-
-/* Responsive Design */
+/*=============================================
+=               Responsive Design             =
+=============================================*/
 @media (max-width: 768px) {
   .container {
     padding: 20px;
   }
 
-  .progress-section {
-    width: 100%;
+  .player-list {
+    grid-template-columns: 1fr;
   }
 
   .player-box {
-    padding: 15px;
+    padding: 18px;
   }
 
   .cake-image {
-    max-width: 60px;
-    max-height: 90px;
+    width: 60px;
+    height: 90px;
   }
 
   .status {
     font-size: 0.7em;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
   }
 }

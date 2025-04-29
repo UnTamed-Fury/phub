@@ -16,93 +16,63 @@ const allCakes = [
   "Not-a-lie Century Cake"
 ];
 
-// Players with their donated cakes (replace with real data)
-const players = [
-  { 
-    name: "AverageNine5410", 
-    cake: "Century Cake of Hype", 
-    status: "Donated", 
-    tooltip: "+5 Mining Fortune" 
-  },
-  { 
-    name: "idk who sold this", 
-    cake: "Chocolate Century Cake", 
-    status: "Sold", 
-    tooltip: "+5 Foraging Fortune" 
-  },
-  { 
-    name: "IamDevilMC", 
-    cake: "Cloudy Century Cake", 
-    status: "Donated", 
-    tooltip: "+5 Farming Fortune" 
-  },
-  {
-    name: "_mel",
-    cake: "Crab-Colored Century Cake",
-    status: "Sold",
-    tooltip: "+10 Health"
-  },
-  {
-    name: "_mel",
-    cake: "Undead Century Cake",
-    status: "Sold",
-    tooltip: "+1 Vitality"
-  },
-  {
-    name: "ReincarnatedFury",
-    cake: "aPunch Century Cake",
-    status: "Owned",
-    tooltip: "+2 Strength"
-  },
-  {
-    name: "7arnavkabra",
-    cake: "Sea Emperor Century Cake",
-    status: "Sold",
-    tooltip: "+1 Sea Creature Chance"
-  }
-];
-
+let players = [];
 const usedCakes = new Set();
 
 // DOM Elements
-const playerList = document.getElementById('playerList');
-const progressFill = document.getElementById('progressFill');
-const progressText = document.getElementById('progressText');
-const remainingCakes = document.getElementById('remainingCakes');
-const collectedText = document.querySelector('.collected-text');
+const playerList = document.getElementById("playerList");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+const remainingCakes = document.getElementById("remainingCakes");
+const collectedText = document.querySelector(".collected-text");
+const missingCount = document.getElementById("missingCount");
+
+// Load players from players.json
+async function loadPlayers() {
+  try {
+    const response = await fetch("/players.json");
+    const data = await response.json();
+    players = data.players || [];
+  } catch (error) {
+    players = [];
+    console.error("Error loading players.json. Using empty data.");
+  }
+}
 
 // Render Player List
-function renderPlayers() {
-  playerList.innerHTML = '';
-  players.forEach(player => {
-    const box = document.createElement('div');
-    box.className = 'player-box';
+async function renderPlayers() {
+  await loadPlayers();
+  playerList.innerHTML = "";
+  usedCakes.clear();
+
+  players.forEach((player) => {
+    const box = document.createElement("div");
+    box.className = "player-box";
 
     // Player Name
-    const name = document.createElement('div');
-    name.className = 'player-name';
+    const name = document.createElement("div");
+    name.className = "player-name";
     name.textContent = player.name;
 
     // Cake Image
-    const cakeImage = document.createElement('img');
-    cakeImage.className = 'cake-image';
-    // Preserve "aPunch" and replace spaces/apostrophes with hyphens
-    cakeImage.src = `/cakes/${player.cake.replace(/['\s]/g, '-').toLowerCase()}.png`;
+    const cakeImage = document.createElement("img");
+    cakeImage.className = "cake-image";
+    cakeImage.src = `cakes/${player.cake.replace(/['\s]/g, "-").toLowerCase()}.png`;
     cakeImage.alt = player.cake;
 
-    // Tooltip for Cake Effect
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tooltip';
+    // Tooltip
+    const tooltip = document.createElement("div");
+    tooltip.className = "tooltip";
     tooltip.textContent = player.tooltip.trim();
     cakeImage.appendChild(tooltip);
 
     // Cake Name
-    const cakeName = document.createElement('div');
-    cakeName.className = 'cake-name';
+    const cakeName = document.createElement("div");
+    cakeName.className = "cake-name";
     cakeName.textContent = player.cake;
 
     // Status Badge
-    const statusDiv = document.createElement('div');
+    const statusDiv = document.createElement("div");
     statusDiv.className = `status ${player.status.toLowerCase()}`;
     statusDiv.textContent = player.status;
 
@@ -116,6 +86,9 @@ function renderPlayers() {
     // Track used cakes
     usedCakes.add(player.cake);
   });
+
+  updateProgress();
+  renderRemainingCakes();
 }
 
 // Update Progress Bar & Counters
@@ -123,33 +96,34 @@ function updateProgress() {
   const collected = usedCakes.size;
   const total = allCakes.length;
   const percentage = (collected / total) * 100;
+  const missing = total - collected;
 
   progressFill.style.width = `${percentage}%`;
   progressText.textContent = `${collected}/${total}`;
   collectedText.textContent = `Collected Cakes (${collected}/${total}):`;
+  missingCount.textContent = missing;
 }
 
 // Render Remaining Cakes
 function renderRemainingCakes() {
-  remainingCakes.innerHTML = '';
-  allCakes.forEach(cake => {
+  remainingCakes.innerHTML = "";
+  allCakes.forEach((cake) => {
     if (!usedCakes.has(cake)) {
-      const li = document.createElement('li');
+      const li = document.createElement("li");
       li.textContent = cake;
       remainingCakes.appendChild(li);
     }
   });
 }
 
-// Initialize
-renderPlayers();
-updateProgress();
-renderRemainingCakes();
-
-// Optional: Add dynamic updates later (e.g., form submission)
-document.getElementById('addPlayerForm').addEventListener('submit', function(e) {
+// Smooth scroll for player list
+document.querySelector(".player-scroll").addEventListener("wheel", (e) => {
   e.preventDefault();
-   // Add new player logic here
-   updateProgress();
-   renderRemainingCakes();
- });
+  const scroll = e.currentTarget.scrollTop;
+  e.currentTarget.scrollTop = scroll + e.deltaY;
+});
+
+// Initialize
+document.addEventListener("DOMContentLoaded", async () => {
+  await renderPlayers();
+});
