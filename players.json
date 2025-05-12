@@ -48,5 +48,17 @@
       "status": "Sold",
       "tooltip": "+1 Magic Find"
     }
+    {
+      "name": "SoundBaker85210",
+      "cake": "Latest Update Century Cake",
+      "status": "Sold",
+      "tooltip": "+2 Ferocity"
+    }
+    {
+      "name": "SoundBaker85210",
+      "cake": "Potato-Style Century Cake",
+      "status": "Sold",
+      "tooltip": "+10 Speed"
+    }
   ]
 }
