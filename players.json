@@ -60,5 +60,11 @@
       "status": "Sold",
       "tooltip": "+10 Speed"
     }
+    {
+     "name": "tw1st3d",
+     "cake":   "Not-a-lie Century Cake"
+     "status": "Donated',
+     "tooltip": "+1 True Defence"
+    }
   ]
 }
