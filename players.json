@@ -47,13 +47,13 @@
       "cake": "Century Cake of the Next Dungeon Floor",
       "status": "Sold",
       "tooltip": "+1 Magic Find"
-    }
+    },
     {
       "name": "SoundBaker85210",
       "cake": "Latest Update Century Cake",
       "status": "Sold",
       "tooltip": "+2 Ferocity"
-    }
+    },
     {
       "name": "SoundBaker85210",
       "cake": "Potato-Style Century Cake",
@@ -62,9 +62,27 @@
     },
     {
      "name": "tw1st3d",
-     "cake":   "Not-a-lie Century Cake"
+     "cake":   "Not-a-lie Century Cake",
      "status": "Donated",
      "tooltip": "+1 True Defence"
+    },
+    {
+      "name": "rayyanpoyon",
+      "cake": "Streamer's Century cake",
+      "status": "Donated",
+      "tooltip": "+1 Pet luck"
+    },
+    {
+      "name": "rayyanpoyon",
+      "cake": "Barry Century cake",
+      "status": "Donated",
+      "tooltip": "+5 Intelligence"
+    },
+    {
+      "name": "rayyanpoyon",
+      "cake": "Pet Rock Century cake",
+      "status": "Donated",
+      "tooltip": "+3 Defence"
     }
   ]
 }
