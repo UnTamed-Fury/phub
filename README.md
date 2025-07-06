@@ -14,8 +14,15 @@ Live site: [https://portalhub.netlify.app](https://portalhub.netlify.app)
 ---
 
 ## Files
+### branch - Main
 
 - `index.html` – Main web page  
 - `style.css` – Styling  
 - `script.js` – Handles dynamic content  
 - `players.json` – Players Data
+
+
+### branch - guide
+
+- `Main.md` - Guides Main Page
+- 

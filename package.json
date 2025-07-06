@@ -1,0 +1,19 @@
+{
+  "name": "vitepress",
+  "version": "1.6.3",
+  "description": "vitepress",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UnTamed-Fury/phub.git"
+  },
+  "author": "UnTamed Fury",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UnTamed-Fury/phub/issues"
+  },
+  "homepage": "https://github.com/UnTamed-Fury/phub#readme"
+}
