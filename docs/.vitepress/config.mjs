@@ -5,8 +5,8 @@ import container from 'markdown-it-container'
 import taskLists from 'markdown-it-task-lists'
 
 export default defineConfig({
-  title: 'Fakepixel Skyblock Guide',
-  description: 'Step-by-step progression for Fakepixel Skyblock',
+  title: 'Skyblock Guide/Wiki by Fury',
+  description: 'A Progression guide/wiki for Fakepixel Skyblock',
   base: '/',
 
   markdown: {
@@ -24,7 +24,7 @@ export default defineConfig({
 
   themeConfig: {
     nav: [
-      { text: 'Guide', link: '/stages/early-game' },
+      { text: 'Guide', link: '/main' },
       { text: 'Contact', link: '/contacts' }
     ],
     sidebar: {
