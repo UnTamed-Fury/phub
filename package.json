@@ -1,19 +1,26 @@
 {
-  "name": "vitepress",
-  "version": "1.6.3",
+  "name": "Skyblock Guide",
+  "version": "1.0.1",
   "description": "vitepress",
   "main": "index.js",
-  "scripts": {
-    "test": "npm start"
-  },
+  "type": "module",
+  "author": "UnTamed Fury",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UnTamed-Fury/phub.git"
   },
-  "author": "UnTamed Fury",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/UnTamed-Fury/phub/issues"
   },
-  "homepage": "https://github.com/UnTamed-Fury/phub#readme"
+  "homepage": "https://github.com/UnTamed-Fury/phub#readme",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "test": "npm run dev"
+  },
+  "devDependencies": {
+    "vitepress": "^1.2.2"
+  }
 }
