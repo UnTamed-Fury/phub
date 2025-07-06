@@ -1,7 +1,7 @@
 {
-  "name": "Skyblock Guide",
+  "name": "skyblock-guide",
   "version": "1.0.1",
-  "description": "vitepress",
+  "description": "Fakepixel Skyblock VitePress Guide",
   "main": "index.js",
   "type": "module",
   "author": "UnTamed Fury",
@@ -18,9 +18,13 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
-    "test": "npm run dev"
+    "preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vitepress": "^1.2.2"
+    "vitepress": "^1.2.2",
+    "markdown-it-anchor": "^8.6.5",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-task-lists": "^2.1.1"
   }
 }

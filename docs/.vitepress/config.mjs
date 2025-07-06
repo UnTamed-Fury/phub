@@ -1,16 +1,32 @@
 import { defineConfig } from 'vitepress'
+import footnote from 'markdown-it-footnote'
+import anchor from 'markdown-it-anchor'
+import container from 'markdown-it-container'
+import taskLists from 'markdown-it-task-lists'
 
 export default defineConfig({
   title: 'Fakepixel Skyblock Guide',
   description: 'Step-by-step progression for Fakepixel Skyblock',
-  base: '/', // ✅ Netlify doesn’t need a sub-path like GitHub Pages
+  base: '/',
+
+  markdown: {
+    config(md) {
+      md.use(footnote)
+      md.use(anchor)
+      md.use(container, 'info')
+      md.use(taskLists)
+    },
+    // Ensures images like <img ...> render inline
+    image: {
+      lazyLoading: false // Optional: load all images eagerly (for emoji-sized ones)
+    }
+  },
 
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/stages/early-game' },
       { text: 'Contact', link: '/contacts' }
     ],
-
     sidebar: {
       '/stages/': [
         {
@@ -34,7 +50,6 @@ export default defineConfig({
         }
       ]
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/UnTamed-Fury/phub' }
     ]
