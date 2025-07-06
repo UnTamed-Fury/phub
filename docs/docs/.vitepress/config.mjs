@@ -3,14 +3,11 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Fakepixel Skyblock Guide',
   description: 'Step-by-step progression for Fakepixel Skyblock',
-  base: '/', // ✅ Netlify doesn’t need a sub-path like GitHub Pages
-
   themeConfig: {
     nav: [
       { text: 'Guide', link: '/stages/early-game' },
       { text: 'Contact', link: '/contacts' }
     ],
-
     sidebar: {
       '/stages/': [
         {
@@ -28,13 +25,10 @@ export default defineConfig({
       '/skills/': [
         {
           text: 'Skill Guides',
-          items: [
-            { text: 'Combat', link: '/skills/Combat' }
-          ]
+          items: [{ text: 'Combat', link: '/skills/Combat' }]
         }
       ]
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/UnTamed-Fury/phub' }
     ]
