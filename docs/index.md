@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /index
+      link: /main
     - theme: alt
       text: GitHub
       link: https://github.com/UnTamed-Fury/phub
