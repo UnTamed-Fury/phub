@@ -1,0 +1,19 @@
+import { ssrRenderAttrs } from "vue/server-renderer";
+import { useSSRContext } from "vue";
+import { _ as _export_sfc } from "./plugin-vue_export-helper.1tPrXgE0.js";
+const __pageData = JSON.parse('{"title":"🪄 Fakepixel Skyblock Guide","description":"","frontmatter":{},"headers":[],"relativePath":"main.md","filePath":"main.md"}');
+const _sfc_main = { name: "main.md" };
+function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {
+  _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="🪄-fakepixel-skyblock-guide" tabindex="-1">🪄 Fakepixel Skyblock Guide <a class="header-anchor" href="#🪄-fakepixel-skyblock-guide" aria-label="Permalink to &quot;🪄 Fakepixel Skyblock Guide&quot;">​</a></h1><p>Welcome to the <strong>Fakepixel Skyblock Guide</strong>!<br> I’m <strong>Fury</strong> (<em>ReincarnatedFury</em>), creator of <strong>Portal HUB</strong>, and this guide will walk you through every step of Skyblock progression on Fakepixel.</p><p>This combines:</p><ul><li>First-hand experience</li><li>Info from the <a href="https://wiki.hypixel.net/" target="_blank" rel="noreferrer">Hypixel Wiki</a></li><li>Meta strategies from top players</li></ul><blockquote><p>💡 Whether you&#39;re new or climbing toward End Game, this guide is built to make your journey efficient and fun.</p></blockquote><hr><h2 id="🚨-disclaimer" tabindex="-1">🚨 Disclaimer <a class="header-anchor" href="#🚨-disclaimer" aria-label="Permalink to &quot;🚨 Disclaimer&quot;">​</a></h2><p>Some content is adapted from the Hypixel Wiki and YouTube.<br> If you spot mistakes or disagree with any recommendations, feel free to <a href="./contacts.html">contact me</a>.</p><hr><h2 id="🧭-progression-stages" tabindex="-1">🧭 Progression Stages <a class="header-anchor" href="#🧭-progression-stages" aria-label="Permalink to &quot;🧭 Progression Stages&quot;">​</a></h2><p>Click to jump to your current stage:</p><ol><li><a href="./stages/early-game.html">Early Game</a></li><li><a href="./stages/early-mid-game.html">Early-Mid Game</a></li><li><a href="./stages/mid-game.html">Mid Game</a></li><li><a href="./stages/mid-late-game.html">Mid-Late Game</a></li><li><a href="./stages/late-game.html">Late Game</a></li><li><a href="./stages/end-game.html">End Game</a></li></ol><p>Each stage includes:</p><ul><li>✅ Milestones and goals</li><li>🛡️ Recommended gear and pets</li><li>💰 Money-making strategies</li><li>🧪 Skill leveling paths</li><li>🕹️ Slayer, Dungeon, and Boss guides</li><li>📊 Stat benchmarks to prepare for the next phase</li></ul><hr><h2 id="📂-extra-resources" tabindex="-1">📂 Extra Resources <a class="header-anchor" href="#📂-extra-resources" aria-label="Permalink to &quot;📂 Extra Resources&quot;">​</a></h2><ul><li><a href="./skills/Combat.html">🧪 Combat Skill Guide</a></li><li>More skills coming soon in the <code>skills/</code> folder</li><li>Optimization tips coming soon in an <code>etc/</code> folder</li></ul><hr><h2 id="🧑‍💻-development-notes" tabindex="-1">🧑‍💻 Development Notes <a class="header-anchor" href="#🧑‍💻-development-notes" aria-label="Permalink to &quot;🧑‍💻 Development Notes&quot;">​</a></h2><ul><li>Content is still growing</li><li>Individual sections are expanded daily</li><li>Community contributions welcome!</li></ul><p>🕒 <strong>Last updated:</strong> July 5, 2025<br> 📝 <strong>Author:</strong> <a href="https://github.com/UnTamed-Fury" target="_blank" rel="noreferrer">UnTamed Fury</a></p></div>`);
+}
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("main.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const main = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
+export {
+  __pageData,
+  main as default
+};
