@@ -1,28 +1,19 @@
-# phub – PortalHub Island
+# PHub – PortalHub Island
 
-This is a simple website for my **FakePixel Skyblock** island: **PHub**(portalhub).
-IGN(if you want to visit it): **PHUB**.
-The purpose of the site is:
+Welcome to **PHub**, a visual wiki and guide for the **FakePixel Skyblock** island.
 
-- To **ask for Century Cake donations**
-- To **show who has donated or sold cakes**
+It is a **fan-made project** and does **not connect to Minecraft servers** in any way.
 
-**Note**: This is just a visual website. It doesn't connect to the game — it's just for fun and display.
+> **IGN (to visit the island in-game)**: `PHUB`
 
-Live site: [https://portalhub.netlify.app](https://portalhub.netlify.app)
+🌐 **Live Site**: [https://portalhub.netlify.app](https://portalhub.netlify.app)
 
 ---
+The site lives entirely in the `guide` branch (which is also the default branch).  
+The `main` branch is deprecated and only kept for legacy/testing purposes.
+---
 
-## Files
-### branch - Main
+## 🤝 Contributions
 
-- `index.html` – Main web page  
-- `style.css` – Styling  
-- `script.js` – Handles dynamic content  
-- `players.json` – Players Data
-
-
-### branch - guide
-
-- `Main.md` - Guides Main Page
-- 
+Contributions are welcome!  
+Check out [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to open a pull request and what kind of help is needed.
